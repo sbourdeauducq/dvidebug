@@ -98,10 +98,10 @@ def main():
 				img.append(x)
 			x = []
 		prev_de = de
-	for row in img:
+	for n, row in enumerate(img):
 		l = len(row)
 		if l != 640:
-			print("Row of unexpected length {0}".format(l))
+			print("Row {0} has unexpected length {1}".format(n, l))
 	img = [row for row in img if len(row) == 640]
 	write_image("tst.ppm", img)
 
